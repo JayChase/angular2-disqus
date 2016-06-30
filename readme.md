@@ -53,7 +53,7 @@ var packages = {
 
 ###Usage
 
-1. At the relevant level for your app add import the **DisqusService** and declare the service provider.
+At the relevant level for your app add import the **DisqusService** and declare the service provider.
 
 For example in **app.component.ts**
 
@@ -64,7 +64,7 @@ var packages = {
 };
 ```
 
-2. Add a comments section to a page/view import the **DisqusThreadComponent** and **DisqusService**.
+Add a comments section to a page/view import the **DisqusThreadComponent** and **DisqusService**.
 
 ```javascript
 import { DisqusService, DisqusThreadComponent } from '../src'; //in live this would be the node_modules path
@@ -83,13 +83,13 @@ import { DisqusService, DisqusThreadComponent } from '../src'; //in live this wo
 
 *In this example the **DisqusService** provider has already been declared at a higher level.
 
-3. Add it as a nested component.
+Add it as a nested component.
 
 ```html
 <disqus-thread></disqus-thread>
 ```
 
-4. Call the **DisqusService.reset** with the page details to load the comments
+Call the **DisqusService.reset** with the page details to load the comments
 
 ```javascript
 ngAfterViewInit() {
