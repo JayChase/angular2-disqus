@@ -12,8 +12,14 @@ var core_1 = require('@angular/core');
 var DisqusService = (function () {
     function DisqusService() {
     }
-    DisqusService.prototype.reset = function (config) {
-        DISQUS.reset(config);
+    DisqusService.prototype.reset = function (identifier, url, reload) {
+        DISQUS.reset({
+            reload: true,
+            config: function () {
+                this.page.identifier = identifier;
+                this.page.url = url;
+            }
+        });
     };
     DisqusService = __decorate([
         core_1.Injectable(), 

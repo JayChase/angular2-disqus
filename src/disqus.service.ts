@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { ResetConfig } from './reset-config';
 
 declare var DISQUS: any;
 
@@ -8,7 +7,14 @@ export class DisqusService {
 
     constructor() { }
 
-    reset(config: ResetConfig): void {
-        DISQUS.reset(config);
+    reset(identifier: string, url: string, reload: boolean): void {
+        
+        DISQUS.reset({
+            reload: true,
+            config: function () {                
+                this.page.identifier = identifier;
+                this.page.url = url;
+            }
+        });
     }
 }

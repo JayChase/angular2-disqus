@@ -2,8 +2,8 @@
     <md-card-title>{{title}}</md-card-title>
     <md-card-content class="demo-content">
         <p>{{description}}</p>
-        <md-input placeholder="page identifier" [(ngModel)]="pageIdentifier"></md-input>
-        <md-input placeholder="page url" [(ngModel)]="pageUrl"></md-input>
+        <md-input placeholder="page identifier eg: pageId1" [(ngModel)]="pageIdentifier"></md-input>
+        <md-input placeholder="page url  eg: http://example.com/#!newthread" [(ngModel)]="pageUrl"></md-input>
     </md-card-content>
     <md-card-actions align="end">
         <button md-raised-button color="primary" (click)="reset()">reset</button>

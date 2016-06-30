@@ -17,19 +17,19 @@ In the SystemJs config file (systemjs.config.js):
 - add a mapping for the package
 
 ```js
-  var map = {
-    ...,
+var map = {
+    ...
     'DISQUS': 'src'
-  };
+};
 ```
 
 - add the package to the list of packages
 
  ```js
-  var packages = {
-    ...,
+var packages = {
+    ...
     'DISQUS': { main: 'index.js', defaultExtension: 'js' }
-  };
+};
 ```
 
 
@@ -38,20 +38,22 @@ In the SystemJs config file (systemjs.config.js):
 Add the DISQUS embed script to you main page (index.html)
 
  ```html
-  <head>
-  <title>your app</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <title>your app</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <base href="/">
+    <base href="/">
 
-  ...
-  
-  <script src="//yoursite.disqus.com/embed.js"></script>
+    ...
 
-  ...
+    <script src="//yoursite.disqus.com/embed.js"></script>
+
+    ...
 
 </head>
 ```
 
 ###Usage
+
+https://help.disqus.com/customer/portal/articles/472107

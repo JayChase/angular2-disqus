@@ -4,7 +4,7 @@ import {MD_CARD_DIRECTIVES} from '@angular2-material/card';
 import {MdInput} from '@angular2-material/input';
 import {MdButton} from '@angular2-material/button';
 
-import { DisqusService, ResetConfig, DisqusThreadComponent } from '../src'; //in live this would be the node_modules path
+import { DisqusService, DisqusThreadComponent } from '../src'; //in live this would be the node_modules path
 
 @Component({
     moduleId: module.id,
@@ -32,7 +32,7 @@ export class DemoComponent implements OnInit {
     ngOnInit() { }
 
     reset() {
-        this.disqusService.reset(new ResetConfig(this.pageIdentifier, this.pageUrl, true));
+        this.disqusService.reset(this.pageIdentifier, this.pageUrl, true);
     }
 
 }

@@ -23,7 +23,7 @@ var DemoComponent = (function () {
     }
     DemoComponent.prototype.ngOnInit = function () { };
     DemoComponent.prototype.reset = function () {
-        this.disqusService.reset(new src_1.ResetConfig(this.pageIdentifier, this.pageUrl, true));
+        this.disqusService.reset(this.pageIdentifier, this.pageUrl, true);
     };
     DemoComponent = __decorate([
         //in live this would be the node_modules path
