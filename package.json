@@ -1,7 +1,10 @@
 {
   "name": "angular2-disqus",
   "version": "1.0.0",
-  "description": "Disqus integration with Angular2",
+  "description": "Disqus integration with Angular2.",
+  "files": [
+    "src"
+  ],
   "directories": {
     "test": "test"
   },
@@ -16,7 +19,8 @@
     "typings": "typings"
   },
   "keywords": [
-    "Angular2"
+    "Angular2",
+    "DISQUS"
   ],
   "author": "JayChase",
   "license": "MIT",
