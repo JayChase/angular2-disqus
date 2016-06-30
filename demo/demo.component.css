@@ -1,0 +1,10 @@
+md-card {
+    margin: 25px;
+}
+
+.demo-content{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
