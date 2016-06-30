@@ -5,6 +5,7 @@
   "files": [
     "src"
   ],
+  "main": "./src/index.js",
   "directories": {
     "test": "test"
   },
@@ -19,6 +20,7 @@
     "typings": "typings"
   },
   "keywords": [
+    "angular",
     "Angular2",
     "DISQUS"
   ],
