@@ -1,7 +1,10 @@
 <md-card>
     <md-card-title>{{title}}</md-card-title>
+    <md-card-content>
+        <span>{{description}}</span>
+        <a href="https://github.com/Useful-Software-Solutions-Ltd/angular2-disqus/blob/master/readme.md" target="_blank">Full instructions</a>
+    </md-card-content>
     <md-card-content class="demo-content">
-        <p>{{description}}</p>
         <md-input placeholder="page identifier eg: pageId1" [(ngModel)]="pageIdentifier"></md-input>
         <md-input placeholder="page url  eg: http://example.com/#!newthread" [(ngModel)]="pageUrl"></md-input>
     </md-card-content>

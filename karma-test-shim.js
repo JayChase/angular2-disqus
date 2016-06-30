@@ -31,7 +31,8 @@ System.config({
 
 var packages = {
     'demo': { main: 'main.js', defaultExtension: 'js' },
-    'rxjs': { defaultExtension: 'js' }
+    'rxjs': { defaultExtension: 'js' },
+    'DISQUS': { main: 'index.js', defaultExtension: 'js' }
 };
 
 var ngPackageNames = [

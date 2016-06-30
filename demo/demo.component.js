@@ -17,11 +17,14 @@ var DemoComponent = (function () {
     function DemoComponent(disqusService) {
         this.disqusService = disqusService;
         this.title = 'DISQUS service demo';
-        this.description = 'How to use the DISQUS reset function to load a new page of comments. Enter the pageIdentifier and PageUrl for the comments to load and then click reset. For more information click the link below';
+        this.description = 'Enter the pageIdentifier and PageUrl for the comments to load and then click reset. For detailed usage instructions cick the following link: ';
+        this.feedback = '';
         this.pageUrl = '';
         this.pageIdentifier = '';
     }
-    DemoComponent.prototype.ngOnInit = function () { };
+    DemoComponent.prototype.ngAfterViewInit = function () {
+        //in production use AfterViewInit to call reset to load comments automatically.
+    };
     DemoComponent.prototype.reset = function () {
         this.disqusService.reset(this.pageIdentifier, this.pageUrl, true);
     };
