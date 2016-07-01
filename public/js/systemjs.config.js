@@ -12,13 +12,13 @@
     'rxjs': 'node_modules/rxjs',
 
     '@angular2-material': 'node_modules/@angular2-material',
-    'DISQUS': 'src'
+    'angular2-disqus': 'src'
   };
 
   // packages tells the System loader how to load when no filename and/or no extension
   var packages = {
     'demo': { main: 'main.js', defaultExtension: 'js' },
-    'DISQUS': { main: 'index.js', defaultExtension: 'js' },
+    'angular2-disqus': { main: 'index.js', defaultExtension: 'js' },
     'rxjs': { defaultExtension: 'js' },
     '@angular2-material/core': { format: 'cjs', defaultExtension: 'js', main: 'core.js' },
     '@angular2-material/toolbar': { format: 'cjs', defaultExtension: 'js', main: 'toolbar.js' },

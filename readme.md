@@ -38,7 +38,7 @@ In the SystemJs config file (systemjs.config.js) add a mapping for the package
 ```javascript
 var map = {
     ...
-    'DISQUS': 'src'
+    'angular2-disqus': 'src'
 };
 ```
 
@@ -60,14 +60,14 @@ For example in **app.component.ts**
 ```javascript
 var packages = {
     ...
-    'DISQUS': { main: 'index.js', defaultExtension: 'js' }
+    'angular2-disqus': { main: 'index.js', defaultExtension: 'js' }
 };
 ```
 
 Add a comments section to a page/view import the **DisqusThreadComponent** and **DisqusService**.
 
 ```javascript
-import { DisqusService, DisqusThreadComponent } from '../src'; //in live this would be the node_modules path
+import { DisqusService, DisqusThreadComponent } from 'angular2-disqus'; 
 
 @Component({
     moduleId: module.id,
