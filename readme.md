@@ -47,7 +47,7 @@ and add the package to the list of packages
  ```javascript
 var packages = {
     ...
-    'DISQUS': { main: 'index.js', defaultExtension: 'js' }
+    'angular2-disqus': { main: 'index.js', defaultExtension: 'js' }
 };
 ```
 
@@ -58,10 +58,19 @@ At the relevant level for your app add import the **DisqusService** and declare 
 For example in **app.component.ts**
 
 ```javascript
-var packages = {
-    ...
-    'angular2-disqus': { main: 'index.js', defaultExtension: 'js' }
-};
+import { DisqusService } from '../src'; //in live this would be the node_modules path
+
+@Component({
+  moduleId: module.id,
+  selector: 'demo-app',
+  templateUrl: 'app.component.html',
+  styleUrls: ['app.component.css'],
+  providers: [
+    DisqusService
+  ],
+  directives: [
+  ]
+})
 ```
 
 Add a comments section to a page/view import the **DisqusThreadComponent** and **DisqusService**.
