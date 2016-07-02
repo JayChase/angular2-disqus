@@ -1,12 +1,12 @@
 {
   "name": "angular2-disqus",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Disqus integration with Angular2.",
   "files": [
-    "src"
+    "lib"
   ],
-  "main": "./src/index.js",
-  "typings": "./src/index.d.ts",
+  "main": "./lib/index.js",
+  "typings": "./lib/index.d.ts",
   "directories": {},
   "scripts": {
     "start": "tsc && concurrently \"tsc -w\" \"lite-server -c bs-config.js\"",
@@ -18,7 +18,8 @@
     "tsc:w": "tsc -w",
     "typings": "typings",
     "setup": "typings install && npm install",
-    "publish": "tsc && npm publish"
+    "pack": "rimraf lib && xcopy src\\*.d.ts lib\\* /S /Y && xcopy src\\*.js lib\\* /S /Y && xcopy src\\*.css lib\\* /S /Y && xcopy src\\*.html lib\\* /S /Y && xcopy src\\*.map lib\\* /S /Y",
+    "prepublish": "tsc && npm run pack"
   },
   "keywords": [
     "angular",

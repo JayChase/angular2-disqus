@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {HTTP_PROVIDERS} from '@angular/http';
 import {MD_TOOLBAR_DIRECTIVES} from '@angular2-material/toolbar';
 
-import { DisqusService } from '../src'; //in live this would be the node_modules path
+import { DisqusService } from '../src'; //in live this would be the package name angular2-disqus
 
 import { DemoComponent } from './demo.component';
 

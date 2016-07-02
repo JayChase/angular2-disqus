@@ -38,7 +38,7 @@ In the SystemJs config file (systemjs.config.js) add a mapping for the package
 ```javascript
 var map = {
     ...
-    'angular2-disqus': 'src'
+    'angular2-disqus': 'node_modules/angular2-disqus'
 };
 ```
 
@@ -47,7 +47,7 @@ and add the package to the list of packages
  ```javascript
 var packages = {
     ...
-    'angular2-disqus': { main: 'index.js', defaultExtension: 'js' }
+    'angular2-disqus': { main: 'lib/index.js', defaultExtension: 'js' }
 };
 ```
 
@@ -58,7 +58,7 @@ At the relevant level for your app add import the **DisqusService** and declare 
 For example in **app.component.ts**
 
 ```javascript
-import { DisqusService } from '../src'; //in live this would be the node_modules path
+import { DisqusService } from 'angular2-disqus';
 
 @Component({
   moduleId: module.id,
