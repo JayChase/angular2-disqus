@@ -9,7 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var toolbar_1 = require('@angular2-material/toolbar');
 var src_1 = require('../src'); //in live this would be the package name angular2-disqus
 var demo_component_1 = require('./demo.component');
 var AppComponent = (function () {
@@ -29,7 +28,6 @@ var AppComponent = (function () {
                 src_1.DisqusService
             ],
             directives: [
-                toolbar_1.MD_TOOLBAR_DIRECTIVES,
                 demo_component_1.DemoComponent
             ]
         }), 

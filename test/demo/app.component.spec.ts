@@ -13,8 +13,19 @@ import {
 } from '@angular/core/testing';
 
 import { AppComponent } from '../../demo/app.component';
+import { DisqusService } from '../../src/disqus.service';
+
+class MockDisqusService extends DisqusService {
+    reset(identifier: string, url: string, reload: boolean): void {
+
+    }
+}
 
 describe('App component', () => {
+    beforeEachProviders(() => [
+        provide(DisqusService, { useClass: MockDisqusService })
+    ]);
+
     it('should build without error',
         async(
             inject([TestComponentBuilder], (tcb: TestComponentBuilder) => {
