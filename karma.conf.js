@@ -35,7 +35,7 @@ module.exports = function (config) {
 
       //Angular Material2
       { pattern: 'node_modules/@angular2-material/**/*.js', included: false, watched: true },
-      { pattern: 'node_modules/@angular2-material/**/*.js.map', included: false, watched: true },
+      //{ pattern: 'node_modules/@angular2-material/**/*.js.map', included: false, watched: true },
 
       //application code
       { pattern: 'src/**/*.js', included: false, watched: true },

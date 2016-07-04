@@ -22,6 +22,8 @@ class MockDisqusService extends DisqusService {
 }
 
 describe('App component', () => {
+    var testTemplate = '<div></div>';
+    
     beforeEachProviders(() => [
         provide(DisqusService, { useClass: MockDisqusService })
     ]);
@@ -29,30 +31,12 @@ describe('App component', () => {
     it('should build without error',
         async(
             inject([TestComponentBuilder], (tcb: TestComponentBuilder) => {
-                tcb.createAsync(AppComponent)
+                tcb.overrideTemplate(AppComponent, testTemplate)
+                    .createAsync(AppComponent)
                     .then((fixture: ComponentFixture<AppComponent>) => {
                         fixture.detectChanges();
 
                         expect(fixture).not.toBeNull();
-                    });
-            })
-        )
-    );
-
-    it('should set the title',
-        async(
-            inject([TestComponentBuilder], (tcb: TestComponentBuilder) => {
-                tcb.createAsync(AppComponent)
-                    .then((fixture: ComponentFixture<AppComponent>) => {
-                        fixture.detectChanges();
-
-                        //set the title
-                        fixture.debugElement.componentInstance.title = 'test-title';
-
-                        fixture.detectChanges();
-
-                        //check the title heading is test-title                        
-                        expect(fixture.debugElement.nativeElement.querySelector('.component-title')).toHaveText('test-title');
                     });
             })
         )
