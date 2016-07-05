@@ -15,9 +15,6 @@ var MockDisqusService = (function (_super) {
     function MockDisqusService() {
         _super.apply(this, arguments);
     }
-    MockDisqusService.prototype.MockDisqusService = function () {
-        spyOn(this, 'reset');
-    };
     MockDisqusService.prototype.reset = function (identifier, url, reload) {
     };
     return MockDisqusService;

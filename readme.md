@@ -105,3 +105,7 @@ ngAfterViewInit() {
     this.disqusService.reset('page3', 'http://localhost:3000/demo/page3', true);
 }
 ```
+
+###Future
+Add support for comment counts??
+https://help.disqus.com/customer/portal/articles/565624-tightening-your-disqus-integration

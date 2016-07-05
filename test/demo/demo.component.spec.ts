@@ -22,10 +22,6 @@ import { DisqusService } from '../../src/disqus.service';
 
 class MockDisqusService extends DisqusService {
 
-    MockDisqusService() {
-        spyOn(this,'reset');
-    }
-
     reset(identifier: string, url: string, reload: boolean): void {
 
     }

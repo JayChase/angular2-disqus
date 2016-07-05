@@ -20,7 +20,7 @@ describe('disqus-thread component', () => {
             inject([TestComponentBuilder], (tcb: TestComponentBuilder) => {
                 tcb.createAsync(DisqusThreadComponent)
                     .then((fixture: ComponentFixture<DisqusThreadComponent>) => {
-                        fixture.detectChanges();
+                        fixture.detectChanges();                        
 
                         expect(fixture).not.toBeNull();
                     });
