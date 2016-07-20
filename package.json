@@ -18,7 +18,7 @@
     "tsc:w": "tsc -w",
     "typings": "typings",
     "setup": "typings install && npm install",
-    "pack": "rimraf lib && xcopy src\\*.d.ts lib\\* /S /Y && xcopy src\\*.js lib\\* /S /Y && xcopy src\\*.css lib\\* /S /Y && xcopy src\\*.html lib\\* /S /Y && xcopy src\\*.map lib\\* /S /Y",
+    "pack": "del lib && xcopy src\\*.d.ts lib\\* /S /Y && xcopy src\\*.js lib\\* /S /Y && xcopy src\\*.css lib\\* /S /Y && xcopy src\\*.html lib\\* /S /Y && xcopy src\\*.map lib\\* /S /Y",
     "prepublish": "tsc && npm run pack"
   },
   "keywords": [
