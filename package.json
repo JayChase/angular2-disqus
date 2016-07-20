@@ -1,6 +1,6 @@
 {
   "name": "angular2-disqus",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Disqus integration with Angular 2.",
   "files": [
     "lib"
@@ -26,7 +26,18 @@
     "Angular2",
     "DISQUS"
   ],
-  "author": "JayChase",
+  "author": {
+    "name": "Jay Chase",
+    "email": "JonathanChase@outlook.com",
+    "url": "https://netdevplus.wordpress.com"
+  },
+  "bugs": {
+    "url": "https://github.com/Useful-Software-Solutions-Ltd/angular2-disqus/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Useful-Software-Solutions-Ltd/angular2-disqus.git"
+  },
   "license": "MIT",
   "peerDependencies": {
     "@angular/core": "2.0.0-rc.4"
@@ -70,6 +81,5 @@
     "typescript": "^1.8.10",
     "typings": "^0.8.1",
     "zone.js": "^0.6.12"
-  },
-  "repository": {}
+  }
 }
