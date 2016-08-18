@@ -9,31 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var disqus_service_1 = require('../src/disqus.service'); //in live this would be the node_modules path
 var DemoComponent = (function () {
-    function DemoComponent(disqusService) {
-        this.disqusService = disqusService;
+    function DemoComponent() {
         this.title = 'DISQUS service demo';
         this.description = 'Enter the pageIdentifier and PageUrl for the comments to load and then click reset. For detailed usage instructions cick the following link: ';
         this.feedback = '';
         this.pageUrl = '';
         this.pageIdentifier = '';
     }
-    DemoComponent.prototype.ngAfterViewInit = function () {
-        //in production use AfterViewInit to call reset to load comments automatically.
-    };
-    DemoComponent.prototype.reset = function () {
-        this.disqusService.reset(this.pageIdentifier, this.pageUrl, true);
+    DemoComponent.prototype.update = function (pageIdentifier, pageUrl) {
+        this.pageIdentifier = pageIdentifier;
+        this.pageUrl = pageUrl;
     };
     DemoComponent = __decorate([
-        //in live this would be the node_modules path
         core_1.Component({
             moduleId: module.id,
             selector: 'demo',
             templateUrl: 'demo.component.html',
             styleUrls: ['demo.component.css']
         }), 
-        __metadata('design:paramtypes', [disqus_service_1.DisqusService])
+        __metadata('design:paramtypes', [])
     ], DemoComponent);
     return DemoComponent;
 }());

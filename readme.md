@@ -47,64 +47,63 @@ and add the package to the list of packages
  ```javascript
 var packages = {
     ...
-    'angular2-disqus': { main: 'lib/index.js', defaultExtension: 'js' }
+    'angular2-disqus': { defaultExtension: 'js' }
 };
 ```
 
 ###Usage
 
-At the relevant level for your app add import the **DisqusService** and declare the service provider.
+At the relevant level for your app add import the **DisqusModule**.
 
-For example in **app.component.ts**
-
-```javascript
-import { DisqusService } from 'angular2-disqus';
-
-@Component({
-  moduleId: module.id,
-  selector: 'demo-app',
-  templateUrl: 'app.component.html',
-  styleUrls: ['app.component.css'],
-  providers: [
-    DisqusService
-  ],
-  directives: [
-  ]
-})
-```
-
-Add a comments section to a page/view import the **DisqusThreadComponent** and **DisqusService**.
+For example in **app.module.ts**
 
 ```javascript
-import { DisqusService, DisqusThreadComponent } from 'angular2-disqus'; 
+import { NgModule }       from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
-@Component({
-    moduleId: module.id,
-    selector: 'demo',
-    templateUrl: 'demo.component.html',
-    styleUrls: ['demo.component.css'],
-    providers: [],
-    directives: [
-        DisqusThreadComponent
+import { FormsModule } from '@angular/forms';
+
+import { AppComponent }   from './app.component';
+import { DemoComponent } from './demo.component';
+
+import { DisqusModule } from '../src/disqus.module';
+
+import { MdCardModule } from '@angular2-material/card';
+import { MdToolbarModule } from '@angular2-material/toolbar';
+import { MdButtonModule } from '@angular2-material/button';
+import { MdInputModule } from '@angular2-material/input';
+
+@NgModule({
+    imports: [
+        //A2 stuff
+        BrowserModule,
+        FormsModule,
+        //src module
+        DisqusModule,
+        //material modules
+        MdCardModule,
+        MdToolbarModule,
+        MdButtonModule,
+        MdInputModule
+    ],
+    declarations: [
+        AppComponent
+    ],
+    bootstrap: [
+        AppComponent
     ]
+
 })
+export class AppModule { }
 ```
 
-*In this example the **DisqusService** provider has already been declared at a higher level.
-
-Add it as a nested component.
+To add a comments section add it as a nested component on your component and set the pageIdentifier and the pageUrl.
 
 ```html
-<disqus-thread></disqus-thread>
+<disqus-thread [page-identifier]="pageIdentifier" [page-url]="pageUrl"></disqus-thread>
 ```
 
-Call the **DisqusService.reset** with the page details to load the comments
-
-```javascript
-ngAfterViewInit() {
-    this.disqusService.reset('page3', 'http://localhost:3000/demo/page3', true);
-}
-```
+The comments section will be reset everytime either **page-identifier** or **page-url** are updated (as long as at least one of the values is truthy). 
 
 ###Future
 Add support for comment counts??

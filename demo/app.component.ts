@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HTTP_PROVIDERS} from '@angular/http';
 
-import { DisqusService } from '../src/disqus.service'; //in live this would be the package name angular2-disqus
-
 import { DemoComponent } from './demo.component';
 
 @Component({
@@ -10,8 +8,7 @@ import { DemoComponent } from './demo.component';
   selector: 'demo-app',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css'],
-  providers: [
-    DisqusService
+  providers: [  
   ],
   directives: [
     DemoComponent

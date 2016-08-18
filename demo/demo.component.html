@@ -5,14 +5,16 @@
         <a href="https://github.com/Useful-Software-Solutions-Ltd/angular2-disqus/blob/master/readme.md" target="_blank">Full instructions</a>
     </md-card-content>
     <md-card-content class="demo-content">
-        <md-input name="input-page-identifier" placeholder="page identifier eg: pageId1" [(ngModel)]="pageIdentifier"></md-input>
-        <md-input id="input-page-url" placeholder="page url  eg: http://example.com/#!newthread" [(ngModel)]="pageUrl"></md-input>
+        <md-input #inputPageIdentifier name="input-page-identifier" placeholder="page identifier eg: pageId1" ></md-input>
+        <md-input #inputPageUrl name="input-page-url" placeholder="page url  eg: http://example.com/#!newthread"></md-input>
+        <p>{{inputPageIdentifier.value}}</p>
+        <p>{{inputPageUrl.value}}</p>
     </md-card-content>
     <md-card-actions align="end">
-        <button id="btn-reset" md-raised-button color="primary" (click)="reset()">reset</button>
+        <button id="btn-update" md-raised-button color="primary" (click)="update(inputPageIdentifier.value, inputPageUrl.value)">update</button>
     </md-card-actions>
 </md-card>
 <md-card>
     <md-card-title>DISQUS comments section</md-card-title>
-    <disqus-thread></disqus-thread>
+    <disqus-thread [page-identifier]="pageIdentifier" [page-url]="pageUrl"></disqus-thread>
 </md-card>

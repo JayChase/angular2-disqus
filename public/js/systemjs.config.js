@@ -18,7 +18,7 @@
   // packages tells the System loader how to load when no filename and/or no extension
   var packages = {
     'demo': { main: 'main.js', defaultExtension: 'js' },
-    'angular2-disqus': { main: 'index.js', defaultExtension: 'js' },
+    'angular2-disqus': { defaultExtension: 'js' },
     'rxjs': { defaultExtension: 'js' },
     '@angular2-material/core': { format: 'cjs', defaultExtension: 'js', main: 'core.js' },
     '@angular2-material/toolbar': { format: 'cjs', defaultExtension: 'js', main: 'toolbar.js' },

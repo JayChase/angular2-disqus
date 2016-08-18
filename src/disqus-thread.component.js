@@ -12,7 +12,25 @@ var core_1 = require('@angular/core');
 var DisqusThreadComponent = (function () {
     function DisqusThreadComponent() {
     }
-    DisqusThreadComponent.prototype.ngOnInit = function () { };
+    DisqusThreadComponent.prototype.ngOnChanges = function (changes) {
+        if (changes['pageIdentifier'].currentValue || changes['pageUrl'].currentValue) {
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = changes['pageIdentifier'].currentValue;
+                    this.page.url = changes['pageUrl'].currentValue;
+                }
+            });
+        }
+    };
+    __decorate([
+        core_1.Input('page-identifier'), 
+        __metadata('design:type', String)
+    ], DisqusThreadComponent.prototype, "pageIdentifier", void 0);
+    __decorate([
+        core_1.Input('page-url'), 
+        __metadata('design:type', String)
+    ], DisqusThreadComponent.prototype, "pageUrl", void 0);
     DisqusThreadComponent = __decorate([
         core_1.Component({
             moduleId: module.id,

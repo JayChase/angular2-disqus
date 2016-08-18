@@ -9,7 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var disqus_service_1 = require('../src/disqus.service'); //in live this would be the package name angular2-disqus
 var demo_component_1 = require('./demo.component');
 var AppComponent = (function () {
     function AppComponent() {
@@ -24,9 +23,7 @@ var AppComponent = (function () {
             selector: 'demo-app',
             templateUrl: 'app.component.html',
             styleUrls: ['app.component.css'],
-            providers: [
-                disqus_service_1.DisqusService
-            ],
+            providers: [],
             directives: [
                 demo_component_1.DemoComponent
             ]
