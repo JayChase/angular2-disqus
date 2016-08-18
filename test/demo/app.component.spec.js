@@ -1,35 +1,38 @@
-"use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var testing_1 = require('@angular/compiler/testing');
-var core_1 = require('@angular/core');
-var testing_2 = require('@angular/core/testing');
-var app_component_1 = require('../../demo/app.component');
-var disqus_service_1 = require('../../src/disqus.service');
-var MockDisqusService = (function (_super) {
-    __extends(MockDisqusService, _super);
-    function MockDisqusService() {
-        _super.apply(this, arguments);
-    }
-    MockDisqusService.prototype.reset = function (identifier, url, reload) {
-    };
-    return MockDisqusService;
-}(disqus_service_1.DisqusService));
-testing_2.describe('App component', function () {
-    var testTemplate = '<div></div>';
-    testing_2.beforeEachProviders(function () { return [
-        core_1.provide(disqus_service_1.DisqusService, { useClass: MockDisqusService })
-    ]; });
-    testing_2.it('should build without error', testing_2.async(testing_2.inject([testing_1.TestComponentBuilder], function (tcb) {
-        tcb.overrideTemplate(app_component_1.AppComponent, testTemplate)
-            .createAsync(app_component_1.AppComponent)
-            .then(function (fixture) {
-            fixture.detectChanges();
-            testing_2.expect(fixture).not.toBeNull();
-        });
-    })));
-});
+// import {
+//     ComponentFixture,
+//     TestComponentBuilder
+// } from '@angular/compiler/testing';
+// import { Component, provide } from '@angular/core';
+// import {
+//     async,
+//     inject,
+//     beforeEachProviders,
+//     describe,
+//     expect,
+//     it
+// } from '@angular/core/testing';
+// import { AppComponent } from '../../demo/app.component';
+// import { DisqusService } from '../../src/disqus.service';
+// class MockDisqusService extends DisqusService {
+//     reset(identifier: string, url: string, reload: boolean): void {
+//     }
+// }
+// describe('App component', () => {
+//     var testTemplate = '<div></div>';
+//     beforeEachProviders(() => [
+//         provide(DisqusService, { useClass: MockDisqusService })
+//     ]);
+//     it('should build without error',
+//         async(
+//             inject([TestComponentBuilder], (tcb: TestComponentBuilder) => {
+//                 tcb.overrideTemplate(AppComponent, testTemplate)
+//                     .createAsync(AppComponent)
+//                     .then((fixture: ComponentFixture<AppComponent>) => {
+//                         fixture.detectChanges();
+//                         expect(fixture).not.toBeNull();
+//                     });
+//             })
+//         )
+//     );
+// }) 
 //# sourceMappingURL=app.component.spec.js.map

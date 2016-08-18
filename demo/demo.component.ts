@@ -1,23 +1,12 @@
 import { Component, AfterViewInit } from '@angular/core';
 
-import {MD_CARD_DIRECTIVES} from '@angular2-material/card';
-import {MdInput} from '@angular2-material/input';
-import {MdButton} from '@angular2-material/button';
-
-import { DisqusService, DisqusThreadComponent } from '../src'; //in live this would be the node_modules path
+import { DisqusService } from '../src/disqus.service'; //in live this would be the node_modules path
 
 @Component({
     moduleId: module.id,
     selector: 'demo',
     templateUrl: 'demo.component.html',
-    styleUrls: ['demo.component.css'],
-    providers: [],
-    directives: [
-        MdButton,
-        MdInput,
-        MD_CARD_DIRECTIVES,
-        DisqusThreadComponent
-    ]
+    styleUrls: ['demo.component.css']
 })
 
 export class DemoComponent implements AfterViewInit {
@@ -37,5 +26,4 @@ export class DemoComponent implements AfterViewInit {
     reset() {
         this.disqusService.reset(this.pageIdentifier, this.pageUrl, true);
     }
-
 }

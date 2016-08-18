@@ -1,42 +1,42 @@
-import {
-    async,
-    beforeEachProviders,
-    describe,
-    expect,
-    inject,
-    it
-} from '@angular/core/testing';
+// import {
+//     async,
+//     beforeEachProviders,
+//     describe,
+//     expect,
+//     inject,
+//     it
+// } from '@angular/core/testing';
 
-import { DisqusService } from '../../src/disqus.service';
+// import { DisqusService } from '../../src/disqus.service';
 
-class MockDISQUS {
-    resetArgs: any;
+// class MockDISQUS {
+//     resetArgs: any;
 
-    reset(args: any){
-        this.resetArgs = args;
-    }
-}
+//     reset(args: any){
+//         this.resetArgs = args;
+//     }
+// }
 
-describe('disqus service', () => {
-    let mockDisqus: MockDISQUS;
+// describe('disqus service', () => {
+//     let mockDisqus: MockDISQUS;
 
-    beforeEach(()=> {
-        mockDisqus = new MockDISQUS();
+//     beforeEach(()=> {
+//         mockDisqus = new MockDISQUS();
 
-        spyOn(mockDisqus,'reset');
+//         spyOn(mockDisqus,'reset');
 
-        (<any>window).DISQUS = mockDisqus;
-    });
+//         (<any>window).DISQUS = mockDisqus;
+//     });
 
-    beforeEachProviders(() => [DisqusService])
+//     beforeEachProviders(() => [DisqusService])
 
-    describe('reset', () => {
+//     describe('reset', () => {
 
-        it('should call DISQUS.reset', inject([DisqusService], (disqusService: DisqusService) => {
-            disqusService.reset('id','url',true);
+//         it('should call DISQUS.reset', inject([DisqusService], (disqusService: DisqusService) => {
+//             disqusService.reset('id','url',true);
 
-            expect(mockDisqus.reset).toHaveBeenCalled();
-        }));
-    });
+//             expect(mockDisqus.reset).toHaveBeenCalled();
+//         }));
+//     });
 
-});
+// });

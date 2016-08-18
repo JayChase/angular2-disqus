@@ -9,10 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var card_1 = require('@angular2-material/card');
-var input_1 = require('@angular2-material/input');
-var button_1 = require('@angular2-material/button');
-var src_1 = require('../src'); //in live this would be the node_modules path
+var disqus_service_1 = require('../src/disqus.service'); //in live this would be the node_modules path
 var DemoComponent = (function () {
     function DemoComponent(disqusService) {
         this.disqusService = disqusService;
@@ -34,16 +31,9 @@ var DemoComponent = (function () {
             moduleId: module.id,
             selector: 'demo',
             templateUrl: 'demo.component.html',
-            styleUrls: ['demo.component.css'],
-            providers: [],
-            directives: [
-                button_1.MdButton,
-                input_1.MdInput,
-                card_1.MD_CARD_DIRECTIVES,
-                src_1.DisqusThreadComponent
-            ]
+            styleUrls: ['demo.component.css']
         }), 
-        __metadata('design:paramtypes', [src_1.DisqusService])
+        __metadata('design:paramtypes', [disqus_service_1.DisqusService])
     ], DemoComponent);
     return DemoComponent;
 }());
