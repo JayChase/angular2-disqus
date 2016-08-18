@@ -1,12 +1,12 @@
 {
   "name": "angular2-disqus",
-  "version": "2.0.0-alpha.3",
+  "version": "2.0.0-alpha.4",
   "description": "Disqus integration with Angular 2.",
   "files": [
     "lib"
   ],
-  "main": "./lib/index.js",
-  "typings": "./lib/index.d.ts",
+  "main": "./lib/disqus.module.js",
+  "typings": "./lib/disqus.module.d.ts",
   "directories": {},
   "scripts": {
     "start": "tsc && concurrently \"tsc -w\" \"lite-server -c bs-config.js\"",
