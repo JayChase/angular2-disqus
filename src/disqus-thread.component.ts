@@ -15,7 +15,7 @@ export class DisqusThreadComponent implements OnChanges {
     constructor() { }
 
     ngOnChanges(changes: SimpleChanges) {
-        if (changes['pageIdentifier'].currentValue || changes['pageUrl'].currentValue) {
+        if ((changes['pageIdentifier'] && changes['pageIdentifier'].currentValue) || (changes['pageUrl'] && changes['pageUrl'].currentValue)) {
             DISQUS.reset({
                 reload: true,
                 config: function () {
