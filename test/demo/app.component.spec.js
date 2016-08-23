@@ -1,38 +1,25 @@
-// import {
-//     ComponentFixture,
-//     TestComponentBuilder
-// } from '@angular/compiler/testing';
-// import { Component, provide } from '@angular/core';
-// import {
-//     async,
-//     inject,
-//     beforeEachProviders,
-//     describe,
-//     expect,
-//     it
-// } from '@angular/core/testing';
-// import { AppComponent } from '../../demo/app.component';
-// import { DisqusService } from '../../src/disqus.service';
-// class MockDisqusService extends DisqusService {
-//     reset(identifier: string, url: string, reload: boolean): void {
-//     }
-// }
-// describe('App component', () => {
-//     var testTemplate = '<div></div>';
-//     beforeEachProviders(() => [
-//         provide(DisqusService, { useClass: MockDisqusService })
-//     ]);
-//     it('should build without error',
-//         async(
-//             inject([TestComponentBuilder], (tcb: TestComponentBuilder) => {
-//                 tcb.overrideTemplate(AppComponent, testTemplate)
-//                     .createAsync(AppComponent)
-//                     .then((fixture: ComponentFixture<AppComponent>) => {
-//                         fixture.detectChanges();
-//                         expect(fixture).not.toBeNull();
-//                     });
-//             })
-//         )
-//     );
-// }) 
+"use strict";
+var testing_1 = require('@angular/core/testing');
+var app_component_1 = require('../../demo/app.component');
+describe('App component', function () {
+    var testTemplate = '<div>TEST</div>';
+    beforeEach(function () {
+        testing_1.TestBed.configureTestingModule({
+            declarations: [app_component_1.AppComponent]
+        });
+    });
+    it('should build without error', testing_1.async(function () {
+        testing_1.TestBed.overrideComponent(app_component_1.AppComponent, {
+            set: {
+                template: testTemplate
+            }
+        });
+        testing_1.TestBed.compileComponents().then(function () {
+            var fixture = testing_1.TestBed.createComponent(app_component_1.AppComponent);
+            fixture.detectChanges();
+            var compiled = fixture.debugElement.nativeElement;
+            expect(compiled).not.toBeNull();
+        });
+    }));
+});
 //# sourceMappingURL=app.component.spec.js.map

@@ -1,74 +1,66 @@
-// import {
-//     ComponentFixture,
-//     TestComponentBuilder
-// } from '@angular/compiler/testing';
+import { Component, provide } from '@angular/core';
+import {
+    async,
+    inject,
+    TestBed,
+    ComponentFixture
+} from '@angular/core/testing';
 
-// import { Component, provide } from '@angular/core';
-// import { disableDeprecatedForms, provideForms } from '@angular/forms';
+import { disableDeprecatedForms, provideForms } from '@angular/forms';
 
-// import {
-//     async,
-//     beforeEachProviders,
-//     describe,
-//     expect,
-//     inject,
-//     it
-// } from '@angular/core/testing';
+import {MdInput} from '@angular2-material/input';
 
-// import {MdInput} from '@angular2-material/input';
+import { DemoComponent } from '../../demo/demo.component';
+import { DisqusThreadComponent } from '../../src/disqus-thread.component';
 
-// import { DemoComponent } from '../../demo/demo.component';
-// import { DisqusService } from '../../src/disqus.service';
+class MockDISQUS {
+    resetArgs: any;
 
-// class MockDisqusService extends DisqusService {
+    reset(args: any) {
+        this.resetArgs = args;
+    }
+}
 
-//     reset(identifier: string, url: string, reload: boolean): void {
+describe('demo component', () => {
+    let mockDisqus: MockDISQUS;
 
-//     }
-// }
+    beforeEach(() => {
+        mockDisqus = new MockDISQUS();
+        spyOn(mockDisqus, 'reset');
 
-// describe('demo component', () => {
-//     beforeEachProviders(() => [
-//         disableDeprecatedForms(),
-//         provideForms(),
-//         provide(DisqusService, { useClass: MockDisqusService })
-//     ]);
+        (<any>window).DISQUS = mockDisqus;
+        TestBed.configureTestingModule({
+            declarations: [
+                DemoComponent,
+                DisqusThreadComponent
+            ]
+        });
+    });
 
-//     it('should build without error',
-//         async(
-//             inject([TestComponentBuilder], (tcb: TestComponentBuilder) => {
-//                 tcb.createAsync(DemoComponent)
-//                     .then((fixture: ComponentFixture<DemoComponent>) => {
-//                         fixture.detectChanges();
+    it('should build without error', async(() => {
+        TestBed.compileComponents().then(() => {
+            var fixture = TestBed.createComponent(DemoComponent);
+            fixture.detectChanges();
+            var compiled = fixture.debugElement.nativeElement;
 
-//                         expect(fixture).not.toBeNull();
-//                     });
-//             })
-//         )
-//     );
+            expect(compiled).not.toBeNull();
+        });
+    }));
 
-//     it('clicking reset button should call DisqusService.reset with page args',
-//         async(
-//             inject([TestComponentBuilder, DisqusService], (tcb: TestComponentBuilder, disqusService: DisqusService) => {
-//                 tcb.createAsync(DemoComponent)
-//                     .then((fixture: ComponentFixture<DemoComponent>) => {
-//                         let demoComponent: DemoComponent = fixture.componentInstance;
-//                         let compiled: any = fixture.debugElement.nativeElement;
-                       
-//                         spyOn(disqusService,'reset');
+    it('clicking reset button should set component pageUrl to input value', async(() => {
+        TestBed.compileComponents().then(() => {
+            var pageUrl = 'testUrl';
 
-//                         demoComponent.pageIdentifier = 'testId';
-//                         demoComponent.pageUrl = 'testUrl';
+            var fixture = TestBed.createComponent(DemoComponent);
+            var compiled = fixture.debugElement.nativeElement;
 
-//                         fixture.detectChanges();
+            compiled.querySelector('[name = input-page-url]').value = pageUrl;
 
-//                         compiled.querySelector('#btn-reset').click();
+            compiled.querySelector('#btn-update').click();
 
-//                         fixture.detectChanges();
+            fixture.detectChanges();
 
-//                         expect(disqusService.reset).toHaveBeenCalledWith('testId','testUrl',true);
-//                     });
-//             })
-//         )
-//     );
-// })
+            expect(fixture.componentInstance.pageUrl).toBe(pageUrl);
+        });
+    }));
+});

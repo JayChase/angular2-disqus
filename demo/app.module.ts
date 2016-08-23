@@ -27,7 +27,8 @@ import { MdInputModule } from '@angular2-material/input';
         MdInputModule
     ],
     declarations: [
-        AppComponent
+        AppComponent,
+        DemoComponent
     ],
     bootstrap: [
         AppComponent

@@ -1,44 +1,35 @@
-// import {
-//     ComponentFixture,
-//     TestComponentBuilder
-// } from '@angular/compiler/testing';
-// import { Component, provide } from '@angular/core';
-// import {
-//     async,
-//     inject,
-//     beforeEachProviders,
-//     describe,
-//     expect,
-//     it
-// } from '@angular/core/testing';
+import { Component, provide } from '@angular/core';
+import {
+    async,
+    inject,
+    TestBed,
+    ComponentFixture
+} from '@angular/core/testing';
 
-// import { AppComponent } from '../../demo/app.component';
-// import { DisqusService } from '../../src/disqus.service';
+import { AppComponent } from '../../demo/app.component';
 
-// class MockDisqusService extends DisqusService {
-//     reset(identifier: string, url: string, reload: boolean): void {
+describe('App component', () => {
+    var testTemplate = '<div>TEST</div>';
 
-//     }
-// }
+    beforeEach(() => {
+        TestBed.configureTestingModule({
+            declarations: [AppComponent]
+        });
+    });
 
-// describe('App component', () => {
-//     var testTemplate = '<div></div>';
-    
-//     beforeEachProviders(() => [
-//         provide(DisqusService, { useClass: MockDisqusService })
-//     ]);
+    it('should build without error', async(() => {
+        TestBed.overrideComponent(AppComponent, {
+            set: {
+                template: testTemplate
+            }
+        });
 
-//     it('should build without error',
-//         async(
-//             inject([TestComponentBuilder], (tcb: TestComponentBuilder) => {
-//                 tcb.overrideTemplate(AppComponent, testTemplate)
-//                     .createAsync(AppComponent)
-//                     .then((fixture: ComponentFixture<AppComponent>) => {
-//                         fixture.detectChanges();
+        TestBed.compileComponents().then(() => {
+            var fixture = TestBed.createComponent(AppComponent);
+            fixture.detectChanges();
+            var compiled = fixture.debugElement.nativeElement;
 
-//                         expect(fixture).not.toBeNull();
-//                     });
-//             })
-//         )
-//     );
-// })
+            expect(compiled).not.toBeNull();
+        });
+    }));
+});
