@@ -33,7 +33,6 @@ var DisqusThreadComponent = (function () {
     ], DisqusThreadComponent.prototype, "pageUrl", void 0);
     DisqusThreadComponent = __decorate([
         core_1.Component({
-            moduleId: module.id,
             selector: 'disqus-thread',
             template: '<div id="disqus_thread"><a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a></div>'
         }), 
