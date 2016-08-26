@@ -6,10 +6,6 @@ import {
     ComponentFixture
 } from '@angular/core/testing';
 
-import { disableDeprecatedForms, provideForms } from '@angular/forms';
-
-import {MdInput} from '@angular2-material/input';
-
 import { DisqusThreadComponent } from '../../src/disqus-thread.component';
 
 class MockDISQUS {
@@ -35,8 +31,8 @@ describe('DisqusThreadComponent component', () => {
     beforeEach(() => {
         mockDisqus = new MockDISQUS();
         spyOn(mockDisqus, 'reset');
-
         (<any>window).DISQUS = mockDisqus;
+
         TestBed.configureTestingModule({
             declarations: [
                 TestHostComponent,
