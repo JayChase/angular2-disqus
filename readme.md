@@ -38,7 +38,7 @@ In the SystemJs config file (systemjs.config.js) add a mapping for the package
 ```javascript
 var map = {
     ...
-    'angular2-disqus': 'node_modules/angular2-disqus'
+    'angular2-disqus': 'node_modules/angular2-disqus/lib'
 };
 ```
 
@@ -47,7 +47,7 @@ and add the package to the list of packages
  ```javascript
 var packages = {
     ...
-    'angular2-disqus': { defaultExtension: 'js' }
+    'angular2-disqus': { main: 'disqus.module.js', defaultExtension: 'js' }
 };
 ```
 
