@@ -12,23 +12,42 @@ npm install --save angular2-disqus
 
 ####Add the DISQUS script
 
-Add the DISQUS embed script to you main page (index.html) making sure to change the url to your disqus site url.
+Add the DISQUS embed in the body of your main page (index.html) making sure to change the url to your disqus site url.
+
+**Breaking change as of v3 the embed script must now be in the body of the page not the head**
 
  ```html
+<html>
+
 <head>
-    <title>your app</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>demo app</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <base href="/">
+  <base href="/">
 
-    ...
+  <link href="../node_modules/@angular2-material/core/style/core.css" rel="stylesheet">
 
-    <script src="//yoursite.disqus.com/embed.js"></script>
+  <!-- Polyfill(s) for older browsers -->
+  <script src="../node_modules/core-js/client/shim.min.js"></script>
 
-    ...
+  <script src="../node_modules/zone.js/dist/zone.js"></script>
+  <script src="../node_modules/reflect-metadata/Reflect.js"></script>
+  <script src="../node_modules/systemjs/dist/system.src.js"></script>
 
+  <script src="../public/js/systemjs.config.js"></script>
+
+  <script>
+      System.import('demo').catch(function(err){ console.error(err); });
+    </script>
 </head>
+
+<body>
+  <demo-app>Loading...</demo-app>
+  <script src="//angular2disqustest.disqus.com/embed.js"></script>
+</body>
+
+</html>
 ```
 
 ####SystemJS

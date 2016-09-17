@@ -26,8 +26,7 @@ var TestHostComponent = (function () {
     }
     TestHostComponent = __decorate([
         core_1.Component({
-            template: '<div><disqus-thread [page-identifier]="pageIdentifier" [page-url]="pageUrl"></disqus-thread></div>',
-            directives: [disqus_thread_component_1.DisqusThreadComponent]
+            template: '<div><disqus-thread [page-identifier]="pageIdentifier" [page-url]="pageUrl"></disqus-thread></div>'
         }), 
         __metadata('design:paramtypes', [])
     ], TestHostComponent);

@@ -1,4 +1,4 @@
-import { Component, provide } from '@angular/core';
+import { Component } from '@angular/core';
 import {
     async,
     inject,
@@ -17,8 +17,7 @@ class MockDISQUS {
 }
 
 @Component({
-    template: '<div><disqus-thread [page-identifier]="pageIdentifier" [page-url]="pageUrl"></disqus-thread></div>',
-    directives: [DisqusThreadComponent]
+    template: '<div><disqus-thread [page-identifier]="pageIdentifier" [page-url]="pageUrl"></disqus-thread></div>'
 })
 class TestHostComponent {
     pageUrl: string = '';

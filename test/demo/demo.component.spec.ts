@@ -1,4 +1,4 @@
-import { Component, provide } from '@angular/core';
+import { Component} from '@angular/core';
 import {
     async,
     inject,
@@ -6,9 +6,12 @@ import {
     ComponentFixture
 } from '@angular/core/testing';
 
-import { disableDeprecatedForms, provideForms } from '@angular/forms';
+import { MdCardModule } from '@angular2-material/card';
+import { MdToolbarModule } from '@angular2-material/toolbar';
+import { MdButtonModule } from '@angular2-material/button';
+import { MdInputModule } from '@angular2-material/input';
 
-import {MdInput} from '@angular2-material/input';
+import { DisqusModule } from '../../src/disqus.module';
 
 import { DemoComponent } from '../../demo/demo.component';
 import { DisqusThreadComponent } from '../../src/disqus-thread.component';
@@ -30,9 +33,21 @@ describe('demo component', () => {
 
         (<any>window).DISQUS = mockDisqus;
         TestBed.configureTestingModule({
+            imports: [
+                MdCardModule,
+                MdToolbarModule,
+                MdButtonModule,
+                MdInputModule,
+                DisqusModule
+            ],            
+            declarations: [                
+                DemoComponent                
+            ]
+        });
+
+        TestBed.configureTestingModule({
             declarations: [
-                DemoComponent,
-                DisqusThreadComponent
+                DemoComponent
             ]
         });
     });
@@ -44,23 +59,6 @@ describe('demo component', () => {
             var compiled = fixture.debugElement.nativeElement;
 
             expect(compiled).not.toBeNull();
-        });
-    }));
-
-    it('clicking reset button should set component pageUrl to input value', async(() => {
-        TestBed.compileComponents().then(() => {
-            var pageUrl = 'testUrl';
-
-            var fixture = TestBed.createComponent(DemoComponent);
-            var compiled = fixture.debugElement.nativeElement;
-
-            compiled.querySelector('[name = input-page-url]').value = pageUrl;
-
-            compiled.querySelector('#btn-update').click();
-
-            fixture.detectChanges();
-
-            expect(fixture.componentInstance.pageUrl).toBe(pageUrl);
         });
     }));
 });
