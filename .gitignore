@@ -38,5 +38,6 @@ typings
 !lib/*.js
 !systemjs.config.js
 !typings/typings.d.ts
+!bs-config.js
 
 npm-debug.log.*

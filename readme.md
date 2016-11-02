@@ -1,6 +1,6 @@
 ##angular2-disqus
 
-A DISQUS integration for Angular 2.
+[DISQUS](https://disqus.com/) integration with Angular 2.
 
 ###Install
 
