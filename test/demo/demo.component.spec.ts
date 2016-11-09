@@ -6,10 +6,7 @@ import {
     ComponentFixture
 } from '@angular/core/testing';
 
-import { MdCardModule } from '@angular2-material/card';
-import { MdToolbarModule } from '@angular2-material/toolbar';
-import { MdButtonModule } from '@angular2-material/button';
-import { MdInputModule } from '@angular2-material/input';
+import { MaterialModule } from '@angular/material';
 
 import { DisqusModule } from '../../src/disqus.module';
 
@@ -34,10 +31,7 @@ describe('demo component', () => {
         (<any>window).DISQUS = mockDisqus;
         TestBed.configureTestingModule({
             imports: [
-                MdCardModule,
-                MdToolbarModule,
-                MdButtonModule,
-                MdInputModule,
+                MaterialModule.forRoot(),
                 DisqusModule
             ],            
             declarations: [                

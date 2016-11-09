@@ -8,10 +8,7 @@ import { DemoComponent } from './demo.component';
 
 import { DisqusModule } from '../src/disqus.module';
 
-import { MdCardModule } from '@angular2-material/card';
-import { MdToolbarModule } from '@angular2-material/toolbar';
-import { MdButtonModule } from '@angular2-material/button';
-import { MdInputModule } from '@angular2-material/input';
+import { MaterialModule } from '@angular/material';
 
 @NgModule({
     imports: [
@@ -20,11 +17,7 @@ import { MdInputModule } from '@angular2-material/input';
         FormsModule,
         //src module
         DisqusModule,
-        //material modules
-        MdCardModule,
-        MdToolbarModule,
-        MdButtonModule,
-        MdInputModule
+        MaterialModule.forRoot()
     ],
     declarations: [
         AppComponent,
