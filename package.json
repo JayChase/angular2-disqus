@@ -1,6 +1,6 @@
 {
   "name": "angular2-disqus",
-  "version": "4.0.0-alpha.1",
+  "version": "4.0.0",
   "description": "Disqus integration with Angular 2.",
   "files": [
     "lib"
@@ -19,9 +19,10 @@
     "typings": "typings",
     "setup": "typings install && npm install",
     "pack": "del lib /Q && xcopy src\\*.d.ts lib\\* /S /Y && xcopy src\\*.js lib\\* /S /Y && xcopy src\\*.css lib\\* /S /Y && xcopy src\\*.html lib\\* /S /Y && xcopy src\\*.map lib\\* /S /Y",
-    "a2-clear-build": "rimraf lib",
-    "prepublish": "npm run a2-clear-build && npm run a2-build",
-    "a2-build": "ngc -p ./tsconfig-ngc.json"
+    "clear-lib": "rimraf lib",
+    "prepublish": "npm run clear-lib && npm run ngc-build",
+    "demo-build": "ngc -p ./tsconfig.json",
+    "ngc-build": "ngc -p ./tsconfig-ngc.json"
   },
   "keywords": [
     "angular",
