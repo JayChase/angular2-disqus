@@ -19,10 +19,9 @@
     "typings": "typings",
     "setup": "typings install && npm install",
     "pack": "del lib /Q && xcopy src\\*.d.ts lib\\* /S /Y && xcopy src\\*.js lib\\* /S /Y && xcopy src\\*.css lib\\* /S /Y && xcopy src\\*.html lib\\* /S /Y && xcopy src\\*.map lib\\* /S /Y",
-    "clear-lib": "rimraf lib",
-    "prepublish": "npm run clear-lib && npm run ngc-build",
-    "demo-build": "ngc -p ./tsconfig.json",
-    "ngc-build": "ngc -p ./tsconfig-ngc.json"
+    "clear-lib": "rimraf lib",    
+    "ngc-build": "ngc -p ./tsconfig-ngc.json",
+    "prepublish": "npm run clear-lib && npm run ngc-build"
   },
   "keywords": [
     "angular",
