@@ -69,6 +69,15 @@ var packages = {
     'angular2-disqus': { main: 'disqus.module.js', defaultExtension: 'js' }
 };
 ```
+###or for angular-cli
+
+Add the package to **angular-cli.json** 
+
+```json
+"packages": [
+    "node_modules/angular2-disqus/lib"
+  ]
+```
 
 ###Usage
 
@@ -85,7 +94,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent }   from './app.component';
 import { DemoComponent } from './demo.component';
 
-import { DisqusModule } from '../src/disqus.module';
+import { DisqusModule } from 'angular2-disqus';  //or for angular-cli the path will be ../../node_modules/angular2-disqus
 
 import { MdCardModule } from '@angular2-material/card';
 import { MdToolbarModule } from '@angular2-material/toolbar';
