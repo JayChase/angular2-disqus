@@ -50,28 +50,15 @@ describe('DisqusThreadComponent component', () => {
         });
     }));
 
-    //just use the DemoComponent as the wrapper for the DisqusThreadComponent for testing
-    it('If pageUrl is updated to a truthy value it should call DISQUS.reset', async(() => {
-        TestBed.compileComponents().then(() => {
-            var pageUrl = 'testUrl';
-
-            var fixture = TestBed.createComponent(TestHostComponent);
-
-            fixture.componentInstance.pageUrl = pageUrl;
-
-            fixture.detectChanges();
-
-            expect(mockDisqus.reset).toHaveBeenCalled();
-        });
-    }));
-
-    it('If pageUrl is updated to a falsey value it should NOT call DISQUS.reset', async(() => {
+    it('If pageUrl is falsey value and pageIdentifier is truthy it should NOT DISQUS.reset', async(() => {
         TestBed.compileComponents().then(() => {
             var pageUrl = '';
+            var pageIdentifier = 'pid';
 
             var fixture = TestBed.createComponent(TestHostComponent);
 
             fixture.componentInstance.pageUrl = pageUrl;
+            fixture.componentInstance.pageIdentifier = pageIdentifier;
 
             fixture.detectChanges();
 
@@ -79,12 +66,14 @@ describe('DisqusThreadComponent component', () => {
         });
     }));
 
-    it('If pageIdentifier is updated to a truthy value it should call DISQUS.reset', async(() => {
+    it('If pageIdentifier and pageUrl are truthy it should call DISQUS.reset', async(() => {
         TestBed.compileComponents().then(() => {
-            var pageIdentifier = 'testUrl';
+            var pageUrl = 'purl';
+            var pageIdentifier = 'pid';
 
             var fixture = TestBed.createComponent(TestHostComponent);
 
+            fixture.componentInstance.pageUrl = pageUrl;
             fixture.componentInstance.pageIdentifier = pageIdentifier;
 
             fixture.detectChanges();
@@ -93,17 +82,41 @@ describe('DisqusThreadComponent component', () => {
         });
     }));
 
-    it('If pageIdentifier is updated to a falsey value it should NOT call DISQUS.reset', async(() => {
+    it('If pageIdentifier has already been set and pageUrl is set it should call DISQUS.reset', async(() => {
         TestBed.compileComponents().then(() => {
-            var pageIdentifier = '';
+            var pageUrl = 'purl';
+            var pageIdentifier = 'pid';            
 
-            var fixture = TestBed.createComponent(TestHostComponent);
-
-            fixture.componentInstance.pageIdentifier = pageIdentifier;
+            var fixture = TestBed.createComponent(TestHostComponent);            
+            fixture.componentInstance.pageIdentifier = pageIdentifier;    
 
             fixture.detectChanges();
 
-            expect(mockDisqus.reset).not.toHaveBeenCalled();
+            fixture.componentInstance.pageUrl = pageUrl;
+
+            fixture.detectChanges();
+
+            expect(mockDisqus.reset).toHaveBeenCalled();
+        });
+    }));
+
+    it('If pageUrl has already been set and pageIdentifier is set it should call DISQUS.reset', async(() => {
+        TestBed.compileComponents().then(() => {
+            var pageUrl = 'purl';
+            var pageIdentifier = 'pid';            
+
+            var fixture = TestBed.createComponent(TestHostComponent);            
+            fixture.componentInstance.pageIdentifier = pageIdentifier;    
+
+             fixture.componentInstance.pageUrl = pageUrl;
+
+            fixture.detectChanges();
+           
+            fixture.componentInstance.pageIdentifier = pageIdentifier;    
+
+            fixture.detectChanges();
+
+            expect(mockDisqus.reset).toHaveBeenCalled();
         });
     }));
 });

@@ -14,12 +14,15 @@ export class DisqusThreadComponent implements OnChanges {
     constructor() { }
 
     ngOnChanges(changes: SimpleChanges) {
-        if ((changes['pageIdentifier'] && changes['pageIdentifier'].currentValue) || (changes['pageUrl'] && changes['pageUrl'].currentValue)) {
+        let pageIdentifier = (changes['pageIdentifier'] && changes['pageIdentifier'].currentValue) ? changes['pageIdentifier'].currentValue : this.pageIdentifier;
+        let pageUrl = (changes['pageUrl'] && changes['pageUrl'].currentValue) ? changes['pageUrl'].currentValue : this.pageUrl;
+
+        if (pageIdentifier && pageUrl) {
             DISQUS.reset({
                 reload: true,
-                config: function () {
-                    this.page.identifier = changes['pageIdentifier'].currentValue;
-                    this.page.url = changes['pageUrl'].currentValue;
+                config: function() {
+                    this.page.identifier = pageIdentifier;
+                    this.page.url = pageUrl;
                 }
             });
         }

@@ -131,7 +131,7 @@ To add a comments section add it as a nested component on your component and set
 <disqus-thread [page-identifier]="pageIdentifier" [page-url]="pageUrl"></disqus-thread>
 ```
 
-The comments section will be reset everytime either **page-identifier** or **page-url** are updated (as long as at least one of the values is truthy). 
+The comments section will be reset everytime either **page-identifier** or **page-url** are updated and both have a value. Note to avoid [issues](https://help.disqus.com/customer/en/portal/articles/662547-why-are-the-same-comments-showing-up-on-multiple-pages-) with comments showing up on the wrong page always set both. 
 
 ###Future
 Add support for comment counts??
