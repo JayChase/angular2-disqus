@@ -1,8 +1,9 @@
 "use strict";
-var testing_1 = require('@angular/core/testing');
-var material_1 = require('@angular/material');
-var disqus_module_1 = require('../../src/disqus.module');
-var demo_component_1 = require('../../demo/demo.component');
+Object.defineProperty(exports, "__esModule", { value: true });
+var testing_1 = require("@angular/core/testing");
+var material_1 = require("@angular/material");
+var disqus_module_1 = require("../../src/disqus.module");
+var demo_component_1 = require("../../demo/demo.component");
 var MockDISQUS = (function () {
     function MockDISQUS() {
     }

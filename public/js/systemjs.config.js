@@ -15,7 +15,7 @@
       '@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
       '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
       '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
-      '@angular/material': 'npm:@angular/material/material.umd.js',
+      '@angular/material': 'npm:@angular/material/bundles/material.umd.js',
 
       // angular testing umd bundles
       '@angular/core/testing': 'npm:@angular/core/bundles/core-testing.umd.js',
@@ -27,7 +27,7 @@
       '@angular/router/testing': 'npm:@angular/router/bundles/router-testing.umd.js',
       '@angular/forms/testing': 'npm:@angular/forms/bundles/forms-testing.umd.js',
 
-      'rxjs': 'node_modules/rxjs'
+      'rxjs': 'npm:rxjs'
     },
     packages: {
       'demo': { main: 'main.js', defaultExtension: 'js' },

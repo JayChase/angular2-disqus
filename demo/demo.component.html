@@ -5,8 +5,12 @@
         <a href="https://github.com/Useful-Software-Solutions-Ltd/angular2-disqus/blob/master/readme.md" target="_blank">Full instructions</a>
     </md-card-content>
     <md-card-content class="demo-content">
-        <md-input #inputPageIdentifier name="input-page-identifier" placeholder="page identifier eg: pageId1" ></md-input>
-        <md-input #inputPageUrl name="input-page-url" placeholder="page url  eg: http://example.com/#!newthread"></md-input>
+        <md-input-container>    
+            <input mdInput #inputPageIdentifier name="input-page-identifier" placeholder="page identifier eg: pageId1" />
+        </md-input-container>
+        <md-input-container>
+            <input mdInput #inputPageUrl name="input-page-url" placeholder="page url  eg: http://example.com/#!newthread"/>
+        </md-input-container>
         <p>{{inputPageIdentifier.value}}</p>
         <p>{{inputPageUrl.value}}</p>
     </md-card-content>

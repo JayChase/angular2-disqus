@@ -9,7 +9,7 @@ module.exports = {
     startPath: startPath,
     server: {
         middleware: {
-            0: null, //to add back in logging comment this line out
+            //0: null, //to add back in logging comment this line out
             1: function (req, res, next) {            
                 if(req.url.indexOf('.') === -1 && req.url.indexOf(startDir) > -1){
                     req.url = startPath;

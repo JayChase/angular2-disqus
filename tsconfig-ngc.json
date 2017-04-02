@@ -2,13 +2,15 @@
     "compilerOptions": {
         "target": "es5",
         "module": "commonjs",
-        "moduleResolution": "node",
         "sourceMap": true,
+        "moduleResolution": "node",
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
-        "removeComments": false,
-        "noImplicitAny": true,
         "declaration": true,
+        "lib": [
+            "es2015",
+            "dom"
+        ],
         "outDir": "./lib",
         "stripInternal": true
     },
@@ -16,7 +18,6 @@
         "node_modules"
     ],
     "files": [
-        "./typings/globals/core-js/index.d.ts",
         "./src/disqus.module.ts"
     ],
     "angularCompilerOptions": {

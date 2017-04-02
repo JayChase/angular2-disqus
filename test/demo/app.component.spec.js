@@ -1,6 +1,7 @@
 "use strict";
-var testing_1 = require('@angular/core/testing');
-var app_component_1 = require('../../demo/app.component');
+Object.defineProperty(exports, "__esModule", { value: true });
+var testing_1 = require("@angular/core/testing");
+var app_component_1 = require("../../demo/app.component");
 describe('App component', function () {
     var testTemplate = '<div>TEST</div>';
     beforeEach(function () {
