@@ -71,13 +71,7 @@ var packages = {
 ```
 ###or for angular-cli
 
-Add the package to **angular-cli.json** 
-
-```json
-"packages": [
-    "node_modules/angular2-disqus/lib"
-  ]
-```
+Just install the package and then import the module as below.
 
 ###Usage
 

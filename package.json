@@ -1,6 +1,6 @@
 {
   "name": "angular2-disqus",
-  "version": "6.0.0",
+  "version": "6.0.0-alpha.1",
   "description": "Disqus integration with Angular.",
   "files": [
     "lib"
@@ -41,7 +41,9 @@
     "url": "https://github.com/Useful-Software-Solutions-Ltd/angular2-disqus.git"
   },
   "license": "MIT",
-  "peerDependencies": {},
+  "peerDependencies": {
+    "@angular/core": "^2.3.1 || >=4.0.0"
+  },
   "dependencies": {},
   "devDependencies": {
     "@angular/animations": "^4.0.1",

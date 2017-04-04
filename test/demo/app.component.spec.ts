@@ -20,7 +20,8 @@ describe('App component', () => {
     it('should build without error', async(() => {
         TestBed.overrideComponent(AppComponent, {
             set: {
-                template: testTemplate
+                template: testTemplate,
+                templateUrl: null
             }
         });
 

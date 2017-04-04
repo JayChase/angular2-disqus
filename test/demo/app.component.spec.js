@@ -12,7 +12,8 @@ describe('App component', function () {
     it('should build without error', testing_1.async(function () {
         testing_1.TestBed.overrideComponent(app_component_1.AppComponent, {
             set: {
-                template: testTemplate
+                template: testTemplate,
+                templateUrl: null
             }
         });
         testing_1.TestBed.compileComponents().then(function () {
