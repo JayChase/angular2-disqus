@@ -16,12 +16,16 @@ var DisqusThreadComponent = (function () {
     DisqusThreadComponent.prototype.ngOnChanges = function (changes) {
         var pageIdentifier = (changes['pageIdentifier'] && changes['pageIdentifier'].currentValue) ? changes['pageIdentifier'].currentValue : this.pageIdentifier;
         var pageUrl = (changes['pageUrl'] && changes['pageUrl'].currentValue) ? changes['pageUrl'].currentValue : this.pageUrl;
+        var pageTitle = (changes['pageTitle'] && changes['pageTitle'].currentValue) ? changes['pageTitle'].currentValue : this.pageTitle;
+        var pageCategoryId = (changes['pageCategoryId'] && changes['pageCategoryId'].currentValue) ? changes['pageCategoryId'].currentValue : this.pageCategoryId;
         if (pageIdentifier && pageUrl) {
             DISQUS.reset({
                 reload: true,
                 config: function () {
                     this.page.identifier = pageIdentifier;
                     this.page.url = pageUrl;
+                    this.page.title = pageTitle;
+                    this.page.category_id = pageCategoryId;
                 }
             });
         }
@@ -36,6 +40,14 @@ __decorate([
     core_1.Input('page-url'),
     __metadata("design:type", String)
 ], DisqusThreadComponent.prototype, "pageUrl", void 0);
+__decorate([
+    core_1.Input('page-title'),
+    __metadata("design:type", String)
+], DisqusThreadComponent.prototype, "pageTitle", void 0);
+__decorate([
+    core_1.Input('page-category-id'),
+    __metadata("design:type", String)
+], DisqusThreadComponent.prototype, "pageCategoryId", void 0);
 DisqusThreadComponent = __decorate([
     core_1.Component({
         selector: 'disqus-thread',
