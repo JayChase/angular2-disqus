@@ -1,16 +1,16 @@
-##angular2-disqus
+## angular2-disqus
 
 [DISQUS](https://disqus.com/) integration with Angular 2.
 
-###Install
+### Install
 
 ```bash
 npm install --save angular2-disqus
 ```
 
-###Setup
+### Setup
 
-####Add the DISQUS script
+#### Add the DISQUS script
 
 Add the DISQUS embed in the body of your main page (index.html) making sure to change the url to your disqus site url.
 
@@ -50,7 +50,7 @@ Add the DISQUS embed in the body of your main page (index.html) making sure to c
 </html>
 ```
 
-####SystemJS
+#### SystemJS
 
 In the SystemJs config file (systemjs.config.js) add a mapping for the package
 
@@ -69,11 +69,11 @@ var packages = {
     'angular2-disqus': { main: 'disqus.module.js', defaultExtension: 'js' }
 };
 ```
-###or for angular-cli
+### or for angular-cli
 
 Just install the package and then import the module as below.
 
-###Usage
+### Usage
 
 At the relevant level for your app add import the **DisqusModule**.
 
@@ -127,6 +127,6 @@ To add a comments section add it as a nested component on your component and set
 
 The comments section will be reset everytime either **page-identifier** or **page-url** are updated and both have a value. Note to avoid [issues](https://help.disqus.com/customer/en/portal/articles/662547-why-are-the-same-comments-showing-up-on-multiple-pages-) with comments showing up on the wrong page always set both. 
 
-###Future
+### Future
 Add support for comment counts??
 https://help.disqus.com/customer/portal/articles/565624-tightening-your-disqus-integration
