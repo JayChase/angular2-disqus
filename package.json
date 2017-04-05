@@ -1,6 +1,6 @@
 {
   "name": "angular2-disqus",
-  "version": "6.0.0-alpha.1",
+  "version": "6.0.0",
   "description": "Disqus integration with Angular.",
   "files": [
     "lib"
