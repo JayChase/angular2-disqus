@@ -12,6 +12,7 @@ export class DisqusThreadComponent implements OnChanges {
     @Input('page-url') pageUrl: string;
     @Input('page-title') pageTitle: string;
     @Input('page-category-id') pageCategoryId: string;
+    @Input('page-language') pageLanguage: string;
 
     constructor() { }
 
@@ -20,6 +21,7 @@ export class DisqusThreadComponent implements OnChanges {
         const pageUrl = (changes['pageUrl'] && changes['pageUrl'].currentValue) ? changes['pageUrl'].currentValue : this.pageUrl;
         const pageTitle = (changes['pageTitle'] && changes['pageTitle'].currentValue) ? changes['pageTitle'].currentValue : this.pageTitle;
         const pageCategoryId = (changes['pageCategoryId'] && changes['pageCategoryId'].currentValue) ? changes['pageCategoryId'].currentValue : this.pageCategoryId;
+        const pageLanguage = (changes['pageLanguage'] && changes['pageLanguage'].currentValue) ? changes['pageLanguage'].currentValue : this.pageLanguage;
 
         if (pageIdentifier && pageUrl) {
             DISQUS.reset({
@@ -29,6 +31,7 @@ export class DisqusThreadComponent implements OnChanges {
                     this.page.url = pageUrl;
                     this.page.title = pageTitle;
                     this.page.category_id = pageCategoryId;
+                    this.language = pageLanguage;
                 }
             });
         }
