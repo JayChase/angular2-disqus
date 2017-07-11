@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import {
     async,
     inject,
@@ -31,11 +31,11 @@ describe('demo component', () => {
         (<any>window).DISQUS = mockDisqus;
         TestBed.configureTestingModule({
             imports: [
-                MaterialModule.forRoot(),
+                MaterialModule,
                 DisqusModule
-            ],            
-            declarations: [                
-                DemoComponent                
+            ],
+            declarations: [
+                DemoComponent
             ]
         });
 

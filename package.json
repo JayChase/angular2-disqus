@@ -1,6 +1,6 @@
 {
   "name": "angular2-disqus",
-  "version": "6.1.0",
+  "version": "6.1.1",
   "description": "Disqus integration with Angular.",
   "files": [
     "lib"
@@ -34,11 +34,11 @@
     "url": "https://netdevplus.wordpress.com"
   },
   "bugs": {
-    "url": "https://github.com/Useful-Software-Solutions-Ltd/angular2-disqus/issues"
+    "url": "https://github.com/jaychase/angular2-disqus/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Useful-Software-Solutions-Ltd/angular2-disqus.git"
+    "url": "https://github.com/jaychase/angular2-disqus.git"
   },
   "license": "MIT",
   "peerDependencies": {

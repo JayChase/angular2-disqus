@@ -20,7 +20,7 @@ describe('demo component', function () {
         window.DISQUS = mockDisqus;
         testing_1.TestBed.configureTestingModule({
             imports: [
-                material_1.MaterialModule.forRoot(),
+                material_1.MaterialModule,
                 disqus_module_1.DisqusModule
             ],
             declarations: [

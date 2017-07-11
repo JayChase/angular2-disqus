@@ -18,6 +18,7 @@ var DisqusThreadComponent = (function () {
         var pageUrl = (changes['pageUrl'] && changes['pageUrl'].currentValue) ? changes['pageUrl'].currentValue : this.pageUrl;
         var pageTitle = (changes['pageTitle'] && changes['pageTitle'].currentValue) ? changes['pageTitle'].currentValue : this.pageTitle;
         var pageCategoryId = (changes['pageCategoryId'] && changes['pageCategoryId'].currentValue) ? changes['pageCategoryId'].currentValue : this.pageCategoryId;
+        var pageLanguage = (changes['pageLanguage'] && changes['pageLanguage'].currentValue) ? changes['pageLanguage'].currentValue : this.pageLanguage;
         if (pageIdentifier && pageUrl) {
             DISQUS.reset({
                 reload: true,
@@ -26,6 +27,7 @@ var DisqusThreadComponent = (function () {
                     this.page.url = pageUrl;
                     this.page.title = pageTitle;
                     this.page.category_id = pageCategoryId;
+                    this.language = pageLanguage;
                 }
             });
         }
@@ -48,6 +50,10 @@ __decorate([
     core_1.Input('page-category-id'),
     __metadata("design:type", String)
 ], DisqusThreadComponent.prototype, "pageCategoryId", void 0);
+__decorate([
+    core_1.Input('page-language'),
+    __metadata("design:type", String)
+], DisqusThreadComponent.prototype, "pageLanguage", void 0);
 DisqusThreadComponent = __decorate([
     core_1.Component({
         selector: 'disqus-thread',
