@@ -1,6 +1,10 @@
 ## angular2-disqus
 
-[DISQUS](https://disqus.com/) integration with Angular 2.
+[DISQUS](https://disqus.com/) integration with Angular.
+
+#### Quick links
+[Plunker template](http://embed.plnkr.co/mIv6Fy/), 
+[Disqus developer help](https://disqus.com/api/docs/)
 
 ### Install
 
